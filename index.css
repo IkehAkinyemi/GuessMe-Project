@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+@media screen and (min-width: 1000px) {
+    body {
+        margin: 0rem;
+        font-size: 1.5rem;
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    .card {
+        margin-top: 2rem;
+        margin-left: 10%;
+        margin-right: 10%;
+        border: 2px solid;
+        display: flex;
+        flex-direction: column;
+        -webkit-box-shadow: 0px 4px 14px 2px #aaa7a4; 
+        box-shadow: 0px 4px 14px 2px #aaa7a4;
+    }
+    
+    .nav {
+        display: flex;
+        border-bottom-left-radius: 20px;
+        -webkit-box-shadow: 0px 10px 6px -1px #E98020; 
+        box-shadow: 0px 10px 6px -1px #E98020;
+        border-bottom-right-radius: 20px;
+        padding: 1rem;
+        align-items: center;
+    }
+    
+    .logo {
+        margin-top: 1rem;
+    }
+    
+    [alt="GuessMe-logo"] {
+        width: 13rem;
+    }
+    
+    .level-nav {
+        display: flex;
+        margin-left: auto;
+    }
+    
+    .level {
+        margin-top: 1rem;
+        margin-right: .5rem;
+        font-size: 2rem;
+    }
+    
+    .level-display {
+        border: 1px solid #E98020;
+        width: 2rem;
+        font-size: 1rem;
+        height: 2rem;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 2rem;
+    }
+    
+    .guessed-nav {
+        display: flex;
+        margin-left: 3rem;
+        margin-right: 4rem;
+    }
+    
+    .guessed {
+        margin-top: 1rem;
+        margin-right: .5rem;
+        font-size: 2rem;
+    }
+    
+    .guessed-display {
+        border: 1px solid #E98020;
+        width: 2rem;
+        font-size: 1rem;
+        height: 2rem;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 2rem;
+    }
+    
+    button {
+        padding: 10px 1rem;
+        font-size: 1rem;
+        letter-spacing: 3px;
+        background: #E98020;
+        border: 1.5px solid #E98020;
+        border-radius: 12px;
+        color: white;
+        font-weight: 600;
+    }
+    
+    .help-nav {
+        margin-top: .5rem;
+    }
+    
+    .help:hover {
+        background: #e97407;
+    }
+    
+    .help-display {
+        display: inline-block;
+        border: 1px solid #E98020;
+        margin-left: 0.7rem;
+        width: 2rem;
+        font-size: 1rem;
+        height: 2rem;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 2rem;
+    }
+    
+    .main {
+        margin-top: 3rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        text-align: center;
+        border-top: 2px solid;
+        border-bottom: 2px solid;
+    }
+    
+    .shuffle-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 1.2rem;
+        text-align: center;
+    }
+    
+    .shuffle-display {
+        background: #e97407e1;
+        padding: 1.5rem 2rem;
+        margin-right: 1rem;
+        border-radius: 9px;
+        color: white;
+    }
+    
+    span {
+        margin-top: 1rem;
+    }
+    
+    .shuffle {
+        display: inline-block;
+        background: transparent;
+        border-radius: 0px;
+        color: black;
+    }
+    
+    .shuffle:hover {
+        background: #E98020;
+    }
+    
+    .icon {
+        margin-bottom: -1.2rem;
+        margin-top: 1.5rem;
+    }
+    
+    p {
+        font-size: 20px;
+        margin-bottom: 2rem;
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+    
+    .sub-main {
+        text-align: center;
+        margin-top: 4rem;
+        margin-bottom: 1rem;
+    }
+    
+    input {
+        padding: 1rem 1rem;
+        text-align: center;
+        border: 1.5px solid #E98020;
+        font-size: 1rem;
+        margin-right: .75rem;
+    }
+    
+    input:focus {
+        background: rgb(172, 168, 168);
+    }
+    
+    .check {
+        border: 2px solid #c76a13;
+    }
+    
+    .check:hover {
+        background: #c76a13;
+    }
+}
+
+@media screen and (max-width: 999px) {
+    body {
+        margin: 0rem;
+        font-size: 1.3rem;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        -webkit-box-shadow: 0px 4px 14px 2px #aaa7a4; 
+        box-shadow: 0px 4px 14px 2px #aaa7a4;
+    }
+
+    .nav {
+        display: flex;
+        border-bottom-left-radius: 20px;
+        -webkit-box-shadow: 0px 10px 6px -1px #E98020; 
+        box-shadow: 0px 10px 6px -1px #E98020;
+        border-bottom-right-radius: 20px;
+        padding: 1rem;
+        align-items: center;
+    }
+
+    .logo {
+        margin-top: 1rem;
+    }
+    
+    [alt="GuessMe-logo"] {
+        width: 9rem;
+    }
+    
+    .level-nav {
+        display: flex;
+        margin-left: auto;
+    }
+    
+    .level {
+        margin-top: 1rem;
+        margin-right: .3rem;
+        font-size: 1.0rem;
+    }
+    
+    .level-display {
+        border: 1px solid #E98020;
+        width: 1.5rem;
+        font-size: 0.8rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 1.5rem;
+    }
+    
+    .guessed-nav {
+        display: flex;
+        margin-left: 1rem;
+        margin-right: 1.6rem;
+    }
+    
+    .guessed {
+        margin-top: 1rem;
+        margin-right: .5rem;
+        font-size: 1.0rem;
+    }
+    
+    .guessed-display {
+        border: 1px solid #E98020;
+        width: 1.59rem;
+        font-size: 0.7rem;
+        height: 1.59rem;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 1.59rem;
+    }
+
+    button {
+        padding: 8px 1rem;
+        font-size: 1rem;
+        letter-spacing: 3px;
+        background: #E98020;
+        border: 1.5px solid #E98020;
+        border-radius: 12px;
+        color: white;
+        font-weight: 600;
+    }
+    
+    .help-nav {
+        margin-top: .5rem;
+    }
+    
+    .help:hover {
+        background: #e97407;
+    }
+    
+    .help-display {
+        display: inline-block;
+        border: 1px solid #E98020;
+        margin-left: 0.2rem;
+        width: 2rem;
+        font-size: 0.8rem;
+        height: 2rem;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 2rem;
+    }
+
+    .main {
+        margin-top: 1.5rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        text-align: center;
+    }
+    
+    .shuffle-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 1.2rem;
+        text-align: center;
+    }
+    
+    .shuffle-display {
+        background: #e97407e1;
+        padding: 1rem 1.5rem;
+        margin-right: 1rem;
+        border-radius: 8px;
+        color: white;
+    }
+
+    span {
+        margin-top: rem;
+    }
+    
+    .shuffle {
+        display: inline-block;
+        background: transparent;
+        border-radius: 0px;
+        color: black;
+    }
+    
+    .shuffle:hover {
+        background: #E98020;
+    }
+
+    .icon {
+        margin-bottom: -1.0rem;
+        margin-top: 1rem;
+
+    }
+
+    .hint-container {
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+        padding: 1.2rem 2rem;
+        -webkit-box-shadow: 0px 4px 14px 2px #aaa7a4; 
+        box-shadow: 0px 4px 14px 2px #aaa7a4;
+    }
+    
+    p {
+        font-size: 20px;
+        margin-bottom: 2rem;
+    }
+
+    .sub-main {
+        text-align: center;
+        margin-top: 4rem;
+        margin-bottom: 1rem;
+    }
+    
+    input {
+        padding: 1rem 1rem;
+        text-align: center;
+        border: 1.5px solid #E98020;
+        font-size: 1rem;
+        margin-right: .75rem;
+    }
+    
+    input:focus {
+        background: rgb(172, 168, 168);
+    }
+    
+    .check {
+        border: 2px solid #c76a13;
+    }
+    
+    .check:hover {
+        background: #c76a13;
+    }
+}

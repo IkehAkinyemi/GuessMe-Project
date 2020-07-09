@@ -1,4 +1,4 @@
-let wordBank = [
+/*let wordBank = [
     'selection',
     'Know',
     'bread',
@@ -10,10 +10,25 @@ let wordBank = [
     'ambivalent',
     'Aesthetics'
 ];
+
+let dictionary = {
+    "SELECTION": "The action of carefully choosing someone or something as being the best or thr most suitable.",
+    "AMBIVALENT": "Having mixed feelings about something or someone.",
+    "AGGRANDIZE": "Enhance the reputation of (someone) beyond what is justified by the facts.",
+    "LOOSE": "Not firmly or tightly fixed in place, detached or able to be detached.",
+    "DESERT": "Abandon (a person, a cause, or organization) in a way considered disloyal ur treacherous.",
+    "ABNEGATION": "The action of renouncing or rejecting something.",
+    "PLEASE": "Cause to feel happy and satisfied.",
+    "BREAD": "Food made of flour, water, and yeast mixed together and baked.",
+    "AESTHETICS": "Set of principles of concerned with the nature and appreciation of beauty.",
+    "KNOW": "Be aware  of through obsservation, inquiry, or information."
+};
+
 let usedWords = [],
     toBeShuffled,
     letterRange = 7,
     correctly = 0,
+    showMe,
     userInput;
 
 function randomSelect() {
@@ -51,19 +66,26 @@ let shuffler = function() {
     return shuffled.toUpperCase();
 }
 
-let showMe = update();
-alert(showMe);
+let dictionaryHelp = function() {
+    for (x in dictionary) {
+        if (x == showMe) return dictionary[x];
+    }
+}
+
+showMe = update();
 alert(shuffler());
+alert(dictionaryHelp());
 userInput = prompt('Type Here');
 
 let resultCheck = function() {
     if(showMe == userInput.toUpperCase()) {
         alert("Correct");
         correctly++;
-        if(correctly == 5) letterRange = letterRange + 4;
+        if(correctly == 5) letterRange = letterRange + 4;//Use this portion to solve the upgrade to different levels word selection and also to change the level display as one upgrade.
         showMe = update();
+        alert(dictionaryHelp());
         if(showMe == 'OUT OF WORDS') return alert("Successfully finished the level");
-        alert(showMe);
+        //alert(showMe);
         alert(shuffler());
         userInput = prompt('Try this one now');
         resultCheck();
