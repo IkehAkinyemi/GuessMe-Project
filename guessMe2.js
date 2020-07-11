@@ -1,5 +1,3 @@
-/*console.log("hello");
-let val;
 let levelSelector = document.querySelector('.level-display'),
 guessedSelector = document.querySelector('.guessed-display'),
 helpSelector = document.querySelector('.help-display'),
@@ -8,8 +6,7 @@ shuffleButton = document.querySelector('.shuffle'),
 paragraph = document.querySelector('p'),
 inputField = document.querySelector('input'),
 checkButton = document.querySelector('.check');
-val = checkButton
-console.log(val)
+
 let wordBank = [
     'selection',
     'Know',
@@ -40,7 +37,7 @@ let usedWords = [],
     toBeShuffled,
     letterRange = 7,
     showMe,
-    userInput; 
+    userInput;
 
 function randomSelect() {
     let wordIndex = (function() {
@@ -53,12 +50,13 @@ function randomSelect() {
     } else {
         return !(usedWords.length == wordBank.length) ? randomSelect() : 'OUT OF WORDS';
     }
-}
+};
+
 
 let update = function() {
     toBeShuffled = randomSelect().toUpperCase();
     return toBeShuffled;
-}
+};
 
 let shuffler = function() {
     let shuffled = '', shuffleIndex = [], repeatCheck;
@@ -74,8 +72,7 @@ let shuffler = function() {
             !(shuffleIndex.length == toBeShuffled.length) ? i-- : "DONE SHUFFLING";  
         }
     }
-    shuffleSelector.innerText = shuffled.toUpperCase();
-    console.log(shuffled);
+    shuffleSelector.textContent = shuffled.toUpperCase();
     return shuffled.toUpperCase();
 }
 
@@ -84,24 +81,17 @@ let dictionaryHelp = function() {
         if (x == showMe) return dictionary[x];
     }
 }
+
+let resultCheck = function() {
+    if (inputField.innerText === showMe) {
+        alert('Correctly Guessed');
+    };
+}
+shuffleButton.addEventListener('click', shuffler);
 showMe = update();
 paragraph.innerText = dictionaryHelp();
 userInput = inputField.innerText;
-
-let resultCheck = function() {
-    if(showMe == userInput.toUpperCase()) {
-        alert("Correct");
-        console.log(guessedSelector.innerText++);
-        if(guessedSelector.innerText == 5) letterRange = letterRange + 4;//Use this portion to solve the upgrade to different levels word selection and also to change the level display as one upgrade.
-        showMe = update();
-        paragraph.innerText = dictionaryHelp();
-        if(showMe == 'OUT OF WORDS') return alert("Successfully finished the level");
-        //alert(showMe);
-        shuffler();
-        userInput = inputField.innerText = '';
-    } else {
-        alert("Wrongly guessed");
-        userInput = inputField.innerText = '';
-    }
-};
-resultCheck();
+inputField.addEventListener('click', resultCheck);
+console.log(inputField.innerText)
+console.log(showMe);
+console.log(shuffler());
