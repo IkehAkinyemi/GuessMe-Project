@@ -88,6 +88,7 @@
         border-radius: 12px;
         color: white;
         font-weight: 600;
+        outline: none;
     }
     
     .help-nav {
@@ -145,10 +146,6 @@
         color: black;
     }
     
-    .shuffle:hover {
-        background: #E98020;
-    }
-    
     .icon {
         margin-bottom: -1.2rem;
         margin-top: 1.5rem;
@@ -185,10 +182,6 @@
     
     .check {
         border: 2px solid #c76a13;
-    }
-    
-    .check:hover {
-        background: #c76a13;
     }
 }
 
@@ -275,6 +268,7 @@
         border-radius: 12px;
         color: white;
         font-weight: 600;
+        outline: none;
     }
     
     .help-nav {
@@ -329,10 +323,6 @@
         border-radius: 0px;
         color: black;
     }
-    
-    .shuffle:hover {
-        background: #E98020;
-    }
 
     .icon {
         margin-bottom: -1.0rem;
@@ -378,10 +368,6 @@
     
     .check {
         border: 2px solid #c76a13;
-    }
-    
-    .check:hover {
-        background: #c76a13;
     }
 }
 

@@ -1,5 +1,6 @@
 let levelSelector = document.querySelector('.level-display'),
 guessedSelector = document.querySelector('.guessed-display'),
+helpButton = document.querySelector('.help'),
 helpSelector = document.querySelector('.help-display'),
 shuffleSelector = document.querySelector('.shuffle-display'),
 shuffleButton = document.querySelector('.shuffle'),
@@ -85,8 +86,12 @@ let dictionaryHelp = function() {
 let resultCheck = function() {
     if(inputField.value.toUpperCase() == toBeShuffled) {
         alert("Correct");
-        console.log(guessedSelector.innerText++);
-        if(guessedSelector.innerText == 5) letterRange = letterRange + 4;//Use this portion to solve the upgrade to different levels word selection and also to change the level display as one upgrade.
+        guessedSelector.innerText++;
+        if(guessedSelector.innerText == 5) {
+            letterRange = letterRange + 4;
+            levelSelector.innerText++;
+            helpSelector.innerText++;
+        }
         showMe = update();
         paragraph.innerText = dictionaryHelp();
         if(showMe == 'OUT OF WORDS') return alert("Successfully finished the level");
@@ -101,9 +106,40 @@ let resultCheck = function() {
     }
 }
 
+inputField.addEventListener('input', function() {
+    inputField.value = inputField.value.toUpperCase();
+});
+
+shuffleButton.addEventListener('click', function() {
+    setTimeout(() => {
+        shuffleButton.style.background = "#E98020";
+    }, 10);
+    setTimeout(() => {
+        shuffleButton.style.background = "transparent";
+    }, 100);
+});
+
+checkButton.addEventListener('click', function() {
+    setTimeout(() => {
+        checkButton.style.background = "#c76a13";
+    }, 10);
+    setTimeout(() => {
+        checkButton.style.background = "#E98020";
+    }, 100);
+});
+
+helpButton.addEventListener('click', function() {
+    if (helpSelector.innerText === "0") {
+        inputField.value = "Oops";
+    } else {
+        inputField.value = showMe;
+    helpSelector.innerText--;
+    }
+})
+
 showMe = update();
 shuffleButton.addEventListener('click', shuffler);
 checkButton.addEventListener('click', resultCheck);
 paragraph.innerText = dictionaryHelp();
-console.log(showMe);
-console.log(shuffler());
+console.log(typeof helpSelector.innerText)
+shuffler();
