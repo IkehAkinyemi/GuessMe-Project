@@ -4,7 +4,7 @@ helpSelector = document.querySelector('.help-display'),
 shuffleSelector = document.querySelector('.shuffle-display'),
 shuffleButton = document.querySelector('.shuffle'),
 paragraph = document.querySelector('p'),
-inputField = document.querySelector('input'),
+inputField = document.getElementById('userInput'),
 checkButton = document.querySelector('.check');
 
 let wordBank = [
@@ -83,15 +83,27 @@ let dictionaryHelp = function() {
 }
 
 let resultCheck = function() {
-    if (inputField.innerText === showMe) {
-        alert('Correctly Guessed');
-    };
+    if(inputField.value.toUpperCase() == toBeShuffled) {
+        alert("Correct");
+        console.log(guessedSelector.innerText++);
+        if(guessedSelector.innerText == 5) letterRange = letterRange + 4;//Use this portion to solve the upgrade to different levels word selection and also to change the level display as one upgrade.
+        showMe = update();
+        paragraph.innerText = dictionaryHelp();
+        if(showMe == 'OUT OF WORDS') return alert("Successfully finished the level");
+        //alert(showMe);
+        shuffler();
+        inputField.value = '';
+    } else {
+        console.log(inputField);
+        alert("Wrongly guessed");
+        inputField.value = '';
+
+    }
 }
-shuffleButton.addEventListener('click', shuffler);
+
 showMe = update();
+shuffleButton.addEventListener('click', shuffler);
+checkButton.addEventListener('click', resultCheck);
 paragraph.innerText = dictionaryHelp();
-userInput = inputField.innerText;
-inputField.addEventListener('click', resultCheck);
-console.log(inputField.innerText)
 console.log(showMe);
 console.log(shuffler());
