@@ -87,7 +87,7 @@ let resultCheck = function() {
     if(inputField.value.toUpperCase() == toBeShuffled) {
         setTimeout(() => {
             resultSelector.style.color = '#00FF00';
-            resultSelector.innerText = 'Correct';
+            resultSelector.innerText = 'Correct!';
         }, 10);
         setTimeout(() => {
             resultSelector.innerText = '';
@@ -140,7 +140,13 @@ checkButton.addEventListener('click', function() {
 
 helpButton.addEventListener('click', function() {
     if (helpSelector.innerText === "0") {
-        resultSelector.innerText = "Oops, out of Help";
+        setTimeout(() => {
+            resultSelector.style.color = '#FFCC00';
+            resultSelector.innerText = 'oops, out of help!';
+        }, 10);
+        setTimeout(() => {
+            resultSelector.innerText = '';
+        }, 1000);
     } else {
         inputField.value = showMe;
     helpSelector.innerText--;
@@ -151,5 +157,4 @@ showMe = update();
 shuffleButton.addEventListener('click', shuffler);
 checkButton.addEventListener('click', resultCheck);
 paragraph.innerText = dictionaryHelp();
-console.log(typeof helpSelector.innerText)
 shuffler();
