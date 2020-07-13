@@ -106,12 +106,12 @@ let resultCheck = function() {
         inputField.value = '';
     } else {
         setTimeout(() => {
-            resultSelector.innerText.style.background = 'red';
+            resultSelector.style.color = 'red';
             resultSelector.innerText = "Wrongly guessed";
-        }, 5);
+        }, 10);
         setTimeout(() => {
             resultSelector.innerText = "";
-        }, 3000);
+        }, 1000);
         inputField.value = '';
     }
 }
