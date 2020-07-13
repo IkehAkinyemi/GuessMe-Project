@@ -5,6 +5,7 @@ helpSelector = document.querySelector('.help-display'),
 shuffleSelector = document.querySelector('.shuffle-display'),
 shuffleButton = document.querySelector('.shuffle'),
 paragraph = document.querySelector('p'),
+resultSelector = document.querySelector('.result-display'),
 inputField = document.getElementById('userInput'),
 checkButton = document.querySelector('.check');
 
@@ -37,8 +38,7 @@ let dictionary = {
 let usedWords = [],
     toBeShuffled,
     letterRange = 7,
-    showMe,
-    userInput;
+    showMe;
 
 function randomSelect() {
     let wordIndex = (function() {
@@ -85,7 +85,13 @@ let dictionaryHelp = function() {
 
 let resultCheck = function() {
     if(inputField.value.toUpperCase() == toBeShuffled) {
-        alert("Correct");
+        setTimeout(() => {
+            resultSelector.style.color = '#00FF00';
+            resultSelector.innerText = 'Correct';
+        }, 10);
+        setTimeout(() => {
+            resultSelector.innerText = '';
+        }, 1000);
         guessedSelector.innerText++;
         if(guessedSelector.innerText == 5) {
             letterRange = letterRange + 4;
@@ -99,10 +105,14 @@ let resultCheck = function() {
         shuffler();
         inputField.value = '';
     } else {
-        console.log(inputField);
-        alert("Wrongly guessed");
+        setTimeout(() => {
+            resultSelector.innerText.style.background = 'red';
+            resultSelector.innerText = "Wrongly guessed";
+        }, 5);
+        setTimeout(() => {
+            resultSelector.innerText = "";
+        }, 3000);
         inputField.value = '';
-
     }
 }
 
@@ -130,7 +140,7 @@ checkButton.addEventListener('click', function() {
 
 helpButton.addEventListener('click', function() {
     if (helpSelector.innerText === "0") {
-        inputField.value = "Oops";
+        resultSelector.innerText = "Oops, out of Help";
     } else {
         inputField.value = showMe;
     helpSelector.innerText--;

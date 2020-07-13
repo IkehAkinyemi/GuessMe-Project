@@ -163,6 +163,10 @@
         margin-top: 4rem;
         margin-bottom: 1rem;
     }
+
+    .result-display {
+        margin-bottom: 1rem;
+    }
     
     input {
         padding: 1rem 1rem;
@@ -346,6 +350,10 @@
     .sub-main {
         text-align: center;
         margin-top: 4rem;
+        margin-bottom: 1rem;
+    }
+
+    .result-display {
         margin-bottom: 1rem;
     }
     
