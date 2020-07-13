@@ -1,4 +1,4 @@
-let wordBank = [
+/*let wordBank = [
     'selection',
     'Know',
     'bread',
@@ -23,4 +23,3 @@ let dictionary = {
     "AESTHETICS": "Set of principles of concerned with the nature and appreciation of beauty.",
     "KNOW": "Be aware  of through obsservation, inquiry, or information."
 };
-
