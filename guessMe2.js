@@ -19,10 +19,51 @@ let wordBank = [
     'opposite', 'graphics', 'struggle', 'delicate', 'explorer', 'definite', 'economy', 'immense', 'astound', 'abolish',
     'suspend', 'synonym', 'visible', 'pasture', 'deprive', 'decline', 'monarch', 'guardian', 'apparent',
     'reassure', 'reliable', 'resemble', 'withdraw', 'occasion', 'pressure', 'purchase', 'escalate', 'navigate', 'numerous',
-    'fortunate', 'opponents', 'knowledge', 'persecute', 'objective', 'originate', 'degenerate', 'terminate', 'transform', 'unanimous'
+    'fortunate', 'opponents', 'knowledge', 'persecute', 'objective', 'originate', 'degenerate', 'terminate', 'transform', 'unanimous',
+    'rough', 'scold', 'timid', 'whirl', 'croak', 'dart', 'dodge', 'creak', 'knob', 'cozy',
+    'patronize', 'overwhelm', 'permanent', 'exuberant', 'anonymous', 'supervise', 'magnitude', 'notorious', 'dumbfound', 'dependent',
+    'illiterate', 'legitimate', 'compromise', 'melancholy', 'vindictive', 'despondent', 'dishearten', 'noteworthy', 'annihilate', 'phenomenon',
+    'imperative', 'inaugurate', 'proficient', 'millennium', 'atmosphere'
 ];
 
 let dictionary = {
+    "ATMOSPHERE": "(Astronomy) the gaseous envelope surrounding a heavenly body.",
+    "MILLENNIUM": "A period of general righteousness and happiness, especially in the indefinite future.",
+    "PROFICIENT": "expert",
+    "INAUGURATE": "initiate",
+    "IMPERATIVE": "Absolutely necessary or required; unavoidable.",
+    "PHENOMENON": "A fact, occurrence, or circumstance observed or observable.",
+    "ANNIHILATE": "nullify",
+    "NOTEWORTHY": "remarkable",
+    "DISHEARTEN": "To depress the hope, courage, or spirits of; discourage.",
+    "DESPONDENT": "Feeling or showing profound hopelessness.",
+    "VINDICTIVE": "Disposed or inclined to revenge.",
+    "MELANCHOLY": "A gloomy state of mind, especially when habitual or prolonged.",
+    "COMPROMISE": "A settlement of differences by mutual concessions; an agreement reached by adjustment of conflicting or opposing claims, principles, etc., by reciprocal modification of demands.",
+    "LEGITIMATE": "lawful",
+    "ILLITERATE": "Displaying a marked lack of knowledge in a particular field.",
+    "DEPENDENT": "Convenient or beneficial, usually as a result of dishonesty or connivance.",
+    "DUMBFOUND": "To make speechless with amazement; astonish.",
+    "NOTORIOUS": "Publicly or generally known, as for a particular trait.",
+    "MAGNITUDE": "Great importance or consequence.",
+    "SUPERVISE": "To oversee (a process, work, workers, etc.) during execution or performance; superintend; have the oversight and direction of.",
+    "ANONYMOUS": "Without any name acknowledged, as that of author, contributor, or the like.",
+    "EXUBERANT": "Abounding in vitality; extremely joyful and vigorous.",
+    "PERMANENT": "Intended to exist or function for a long, indefinite period without regard to unforeseeable conditions.",
+    "OVERWHELM": "To cover or bury beneath a mass of something.",
+    "PATRONIZE": "To behave in an offensively condescending manner toward.",
+    "COZY": "Convenient or beneficial, usually as a result of dishonesty or connivance.",
+    "KNOB": "A rounded lump or protuberance on the surface or at the end of something, as a knot on a tree trunk.",
+    "CREAK": "To make a sharp, harsh, grating, or squeaking sound.",
+    "DODGE": "To move aside or change position suddenly, as to avoid a blow or get behind something.",
+    "DART": "Something similar in function to such a missile, as the stinging member of an insect.",
+    "CROAK": "To speak with a low, rasping voice.",
+    "WHIRL": "To turn around, spin, or rotate rapidly.",
+    "TIMID": "Characterized by or indicating fear.",
+    "SCOLD": "To find fault; reprove.",
+    "ROUGH": "Having a coarse or uneven surface, as from projections, irregularities, or breaks; not smooth.",
+    "LAUNCH": "To send forth, catapult, or release, as a self-propelled vehicle or weapon.",
+    "MURAL": "A greatly enlarged photograph attached directly to a wall.",
     "UNANIMOUS": "Characterized by or showing complete agreement.",
     "TRANSFORM": "To change in form, appearance, or structure; metamorphose.",
     "TERMINATE": "To occur at or form the conclusion of.",
@@ -179,7 +220,7 @@ let resultCheck = function() {
         if(guessedSelector.innerText % 10 == 0) {
             letterRange = letterRange + 1;
             levelSelector.innerText++;
-            helpSelector.innerText + 3;
+            helpSelector.innerText = Number(helpSelector.innerText) + 2;
         }
         showMe = update();
         paragraph.innerText = dictionaryHelp();
@@ -197,7 +238,7 @@ let resultCheck = function() {
         }, 1000);
         inputField.value = '';
     }
-}
+};
 
 inputField.addEventListener('input', function() {
     inputField.value = inputField.value.toUpperCase();
@@ -234,7 +275,7 @@ helpButton.addEventListener('click', function() {
         inputField.value = showMe;
     helpSelector.innerText--;
     }
-})
+});
 
 showMe = update();
 shuffleButton.addEventListener('click', shuffler);
