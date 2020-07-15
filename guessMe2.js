@@ -276,7 +276,7 @@ helpButton.addEventListener('click', function() {
     helpSelector.innerText--;
     }
 });
-
+document.querySelector('i').style.color = 'red';
 showMe = update();
 shuffleButton.addEventListener('click', shuffler);
 checkButton.addEventListener('click', resultCheck);

@@ -189,6 +189,11 @@
     .check {
         border: 2px solid #c76a13;
     }
+
+    .love {
+        text-align: center;
+        margin-left: 1rem;
+    }
 }
 
 @media screen and (max-width: 999px) {
@@ -380,6 +385,10 @@
     
     .check {
         border: 2px solid #c76a13;
+    }
+
+    .love {
+        text-align: center;
     }
 }
 
