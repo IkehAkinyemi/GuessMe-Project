@@ -33,4 +33,8 @@ if (localStorage.getItem('guessMeStorage') === null) {
 
 usedWords.push(wordBank[wordIndex]);
 
-localStorage.setItem('guessMeStorage', JSON.stringify(usedWords));
+localStorage.setItem('guessMeStorage', JSON.stringify(usedWords));*/
+
+export function user(hammer) {
+    return `hello, ${hammer}`;
+}

@@ -308,6 +308,11 @@ helpButton.addEventListener('click', function() {
     }
 });
 document.querySelector('i').style.color = 'red';
+let resetButton = document.querySelector('.logo');
+resetButton.addEventListener('click', function(){
+    localStorage.clear();
+    console.log('cleared');
+});
 showMe = update();
 shuffleButton.addEventListener('click', shuffler);
 checkButton.addEventListener('click', resultCheck);
