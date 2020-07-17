@@ -311,7 +311,7 @@ document.querySelector('i').style.color = 'red';
 let resetButton = document.querySelector('.logo');
 resetButton.addEventListener('click', function(){
     localStorage.clear();
-    console.log('cleared');
+    location.reload();
 });
 showMe = update();
 shuffleButton.addEventListener('click', shuffler);
