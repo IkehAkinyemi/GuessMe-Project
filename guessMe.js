@@ -23,3 +23,14 @@ let dictionary = {
     "AESTHETICS": "Set of principles of concerned with the nature and appreciation of beauty.",
     "KNOW": "Be aware  of through obsservation, inquiry, or information."
 };
+
+let usedWords;
+if (localStorage.getItem('guessMeStorage') === null) {
+    usedWords = [];
+} else {
+    usedWords = JSON.parse(localStorage.getItem('guessMeStorage'));
+}
+
+usedWords.push(wordBank[wordIndex]);
+
+localStorage.setItem('guessMeStorage', JSON.stringify(usedWords));

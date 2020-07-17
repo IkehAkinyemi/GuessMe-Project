@@ -159,10 +159,36 @@ let dictionary = {
     "LOYAL": "Faithful to any leader, party, or cause, or to any person or thing conceived as deserving fidelity."
 };
 
-let usedWords = [],
+let usedWords,
     toBeShuffled,
     letterRange = 6,
     showMe;
+
+    if (localStorage.getItem('guessMeStorage') === null) {
+        usedWords = [];
+    } else {
+        usedWords = JSON.parse(localStorage.getItem('guessMeStorage'));
+        console.log(usedWords);
+    };  
+
+    
+    if (localStorage.getItem('levelSelectorStorage') === null) {
+        levelSelector.innerText = 1;
+    } else {
+        levelSelector.innerText = JSON.parse(localStorage.getItem('levelSelectorStorage'));
+    };
+
+    if (localStorage.getItem('guessedSelectorStorage') === null) {
+        guessedSelector.innerText = 0;
+    } else {
+        guessedSelector.innerText = JSON.parse(localStorage.getItem('guessedSelectorStorage'));
+    };
+    
+    if (localStorage.getItem('helpSelectorStorage') === null) {
+        helpSelector.innerText = 3;
+    } else {
+        helpSelector.innerText = JSON.parse(localStorage.getItem('helpSelectorStorage'));
+    };
 
 function randomSelect() {
     let wordIndex = (function() {
@@ -174,7 +200,7 @@ function randomSelect() {
         return wordBank[wordIndex];
     } else {
         return !(usedWords.length == wordBank.length) ? randomSelect() : 'OUT OF WORDS';
-    }
+    };
 };
 
 
@@ -209,6 +235,7 @@ let dictionaryHelp = function() {
 
 let resultCheck = function() {
     if(inputField.value.toUpperCase() == toBeShuffled) {
+        localStorage.setItem('guessMeStorage', JSON.stringify(usedWords));
         setTimeout(() => {
             resultSelector.style.color = '#00FF00';
             resultSelector.innerText = 'Correct!';
@@ -217,10 +244,13 @@ let resultCheck = function() {
             resultSelector.innerText = '';
         }, 1000);
         guessedSelector.innerText++;
+        localStorage.setItem('guessedSelectorStorage', JSON.stringify(guessedSelector.innerText));
         if(guessedSelector.innerText % 10 == 0) {
             letterRange = letterRange + 1;
             levelSelector.innerText++;
+            localStorage.setItem('levelSelectorStorage', JSON.stringify(levelSelector.innerText));
             helpSelector.innerText = Number(helpSelector.innerText) + 2;
+            localStorage.setItem('helpSelectorStorage', JSON.stringify(helpSelector.innerText));
         }
         showMe = update();
         paragraph.innerText = dictionaryHelp();
@@ -231,7 +261,7 @@ let resultCheck = function() {
     } else {
         setTimeout(() => {
             resultSelector.style.color = 'red';
-            resultSelector.innerText = "Wrongly guessed";
+            resultSelector.innerText = "Wrong";
         }, 10);
         setTimeout(() => {
             resultSelector.innerText = "";
@@ -253,13 +283,14 @@ shuffleButton.addEventListener('click', function() {
     }, 100);
 });
 
-checkButton.addEventListener('click', function() {
+checkButton.addEventListener('click', function(e) {
     setTimeout(() => {
         checkButton.style.background = "#c76a13";
     }, 10);
     setTimeout(() => {
         checkButton.style.background = "#E98020";
     }, 100);
+    e.preventDefault();
 });
 
 helpButton.addEventListener('click', function() {
